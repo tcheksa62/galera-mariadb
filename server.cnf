@@ -1,0 +1,16 @@
+[mysqld]
+innodb_buffer_pool_size=1G
+innodb_log_file_size=256M
+max_connections=1024
+innodb_file_per_table
+server_id=1
+performance_schema=0
+default-storage-engine=innodb
+wsrep_provider="/usr/lib64/galera/libgalera_smm.so"
+wsrep_cluster_name="cluster"
+wsrep_cluster_address="gcomm://SQL01,SQL02,SQL03"
+wsrep_sst_method=xtrabackup-v2
+wsrep_sst_auth=sst:sstrulez
+binlog_format=ROW
+log-error=/var/log/mysql/error.log
+user=mysql
